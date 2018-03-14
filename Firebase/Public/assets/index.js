@@ -7,6 +7,7 @@
     storageBucket: "bootcamp-cc0b8.appspot.com",
     messagingSenderId: "319783617182"
   };
+
   firebase.initializeApp(config);
   var database = firebase.database();
     
@@ -17,7 +18,7 @@
     //set variables for user input
     var trainName = $("#name").val().trim();
     var trainDestination = $("#destination").val().trim();
-    var trainStart = moment($("#start").val().trim(,) "HH:mm").forma("X");
+    var trainStart = moment($("#start").val().trim(), "HH:mm").format("X");
     var trainFreq = $("#frequency").val().trim();
     
     //create temporary object to story input of train data
@@ -46,6 +47,43 @@
 //End of submit button function
 })
 
+//firebase event to add train data to database
+database.ref().on("child_added", function(childSnapshot, prevChildKey){
+  console.log(childSnapshot.val());
 
-//end of initialize firebase function
-}
+//store snapshot data into variables
+var trainName = childSnapshot.val().name;
+var trainDestination = childSnapshot.val().destination;
+var trainStart = childSnapshot.val().start;
+var trainFreq = childSnapshot.val().frequency;
+
+//check to see if childSnapshot data is retrieved
+console.log(trainName);
+console.log(trainDestination);
+
+console.log("frequency=" + trainFreq);
+
+//declare unix time for moment.js
+var momentStart = moment.unix(trainStart).format("HH:mm");
+console.log("start time=" + momentStart);
+//find the minutes lapsed since the last train
+var minutes = moment().diff(moment.unix(trainStart, "X"), "minutes");
+console.log("minutes lapsed=" + minutes);
+
+// calculate minutes away
+var minAway = trainFreq - minutes % trainFreq;
+console.log("Minutes Away=" + minAway);
+
+//calculate next arrival
+var time = minutes + minAway
+var nextArrival = moment(momentStart, 'HH:mm').add(time, 'minutes').format("HH:mm");
+
+//var time = moment().add(moment.unix(minAway, "X"), "minutes");
+//var nextArrival = moment.unix(time).format("HH:mm");
+console.log("Next Arrival=" + nextArrival);
+//add data to table
+$("#table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFreq + "</td><td>" + nextArrival + "</td><td>" + minAway + "</td></tr>");
+
+
+//end of firebase event
+})
