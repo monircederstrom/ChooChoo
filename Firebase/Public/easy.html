@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1></h1>
+    <form>
+        <input type="text" name="title" class="title-input"/>
+        <input type="submit" value="submit" />
+    </form>
+    <form>
+        <input type="text" name="noclue" class="noclue-input"/>
+        <input type="submit" value="submit" />
+    </form>
+
+    <script>
+     var config = {
+    apiKey: "AIzaSyCxAPllmMn1a0Xc1V7GCSVW6V_TroVw4Xk",
+    authDomain: "bootcamp-cc0b8.firebaseapp.com",
+    databaseURL: "https://bootcamp-cc0b8.firebaseio.com",
+    projectId: "bootcamp-cc0b8",
+    storageBucket: "bootcamp-cc0b8.appspot.com",
+    messagingSenderId: "319783617182"
+  };
+  firebase.initializeApp(config);
+  $(function() {
+    let database = firebase.database();
+    $("form").on("submit", function (e) {
+      e.preventDefault();
+      let val = $(".title-input").val();
+      database.ref("value").set(val);
+    })
+    database.ref("message");
+  })
+    </script>
+    <script>
+        $(function(){
+            let database = firebase.database();
+
+            $("form").on("submit", function (e) {
+                e.preventDefault();
+
+                let val = $(".title-input").val();
+
+                firebase.database().ref("title").set(val);
+            })
+
+            database.ref("title").on("value", function (snapshot) {
+                let data = snapshot.val();
+
+                $("h2").text(data);
+            }) 
+        })       
+    </script>
+</body>
+</html>

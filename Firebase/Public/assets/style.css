@@ -1,0 +1,25 @@
+.rowheadings {
+    background-color: aqua;
+    color: white;
+    text-align: left;
+    padding: .5%;
+    padding-left: 1%;
+}
+#table {
+    padding: 2%;
+    border: 1px solid aqua;
+  
+}
+form {
+    padding: 1%;
+    border: 1px solid aqua;
+}
+.jumbotron {
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+    width: 103%;
+    margin-top: 1%;
+    margin-left: -1.5%;
+    margin-right: -5%;
+}

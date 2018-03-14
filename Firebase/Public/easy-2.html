@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1></h1>
+    <form>
+        <input type="text" name="title" class="title-input"/>
+        <input type="submit" value="submit" />
+    </form>
+    <script>
+      var config = {
+          apiKey: "AIzaSyAUzm1GnpbUWhOUKdqcolOeVl7ZvbFF3y4",
+          authDomain: "th-class.firebaseapp.com",
+          databaseURL: "https://th-class.firebaseio.com",
+          projectId: "th-class",
+          storageBucket: "th-class.appspot.com",
+          messagingSenderId: "418153431472"
+        };
+
+        firebase.initializeApp(config);
+            
+        $(function(){
+            let database = firebase.database();
+
+            $("form").on("submit", function (e) {
+                e.preventDefault();
+
+                let val = $(".title-input").val();
+
+                database.ref("mytuesdaythursdaymessage").set(val)
+            }) 
+
+            
+            database.ref("mytuesdaythursdaymessage").on("value", function(snapshot){
+              let data = snapshot.val();
+
+              $("h1").text(data);
+});
+
+       $(function() {
+            let database = firebase.database();
+            $("form").on("submit", function (e) {
+            e.preventDefault();
+            let val = $(".title-input").val();
+            database.ref("message").set(val)
+            })
+            database.ref("message").on("value", function(
+              snapshot){
+              let data = snapshot.val();
+              $("h1").text(data);
+            })
+            })
+            })
+               
+    </script>
+</body>
+</html>
