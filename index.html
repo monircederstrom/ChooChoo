@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/style.css">
+<!--//firebase reference-->
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<!--moment.js link-->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<title> Caboose On the Loose!</title> 
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4"> Train Times</h1> 
+        <br> 
+        <h3>ChooChoo</h3>
+     <!--end of jumbotron div-->
+    </div>
+    <div class="row">
+      <div class="rowheadings">
+          <h5>Current Trains</h5>
+        <!--end of current train div-->
+      </div>
+      <table class="table table-hover" id="table">
+        <thead>
+          <tr>
+            <th>Train Name</th>
+            <th>Destination</th>
+            <th>Frequency (min)</th>
+            <th>Next Arrival</th>
+            <th>Minutes Away</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Table info will be populated here-->
+        </tbody>
+      </table>
+      <!--end of first row-->
+    </div>
+    <div class="row">
+      <div class="rowheadings">
+        <h5>Add Train</h5>
+        <!--end of current train div-->
+      </div>
+      <form>
+          <div class="form-group">
+              <label for="train-name-input">Train Name</label>
+              <input type="text" class="form-control" id="name"  placeholder="Thomas">
+          </div>
+          <div class="form-group">
+              <label for="destination-input">Destination</label>
+              <input type="text" class="form-control" id="destination" placeholder="Sodor">
+          </div>
+          <div class="form-group">
+              <label for="start-input">First Train Time (HH:mm - military time)</label>
+              <input type="text" class="form-control" id="start" placeholder="12:00">
+          </div>
+          <div class="form-group">
+              <label for="frequency-input">Frequency (min)</label>
+              <input type="text" class="form-control" id="frequency" placeholder="25">
+          </div>
+
+          <button type="submit" id="add-train-btn" class="btn btn-primary"> Submit</button>
+
+      </form>
+      <!--End of second row-->
+    </div>
+
+    <!--end of container div-->
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous"></script>  
+  <script src="assets/index.js"></script>
+  </body>
+</html>
