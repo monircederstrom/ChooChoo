@@ -1,0 +1,41 @@
+[debug] [2018-03-16T06:49:08.768Z] ----------------------------------------------------------------------
+[debug] [2018-03-16T06:49:08.770Z] Command:       /usr/local/Cellar/node/9.3.0_1/bin/node /usr/local/bin/firebase serve
+[debug] [2018-03-16T06:49:08.770Z] CLI Version:   3.17.5
+[debug] [2018-03-16T06:49:08.770Z] Platform:      darwin
+[debug] [2018-03-16T06:49:08.770Z] Node Version:  v9.3.0
+[debug] [2018-03-16T06:49:08.770Z] Time:          Fri Mar 16 2018 01:49:08 GMT-0500 (CDT)
+[debug] [2018-03-16T06:49:08.770Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-16T06:49:08.789Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-16T06:49:08.789Z] > authorizing via signed-in user
+[debug] [2018-03-16T06:49:08.791Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-16T06:49:08.791Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/P1Nf0C6yqUUZi3_cFpzNlV-KCt8zsfHWd5XrDEEk5w5hy8OuYIajRrAQRPsU-c2M',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Mar 16 2018 01:49:08 GMT-0500 (CDT)
+[debug] [2018-03-16T06:49:09.035Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-16T06:49:09.051Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/caboose-f06da  
+  
+ Fri Mar 16 2018 01:49:09 GMT-0500 (CDT)
+[debug] [2018-03-16T06:49:09.686Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-16T06:49:09.687Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/caboose-f06da/tokens  
+  
+ Fri Mar 16 2018 01:49:09 GMT-0500 (CDT)
+[debug] [2018-03-16T06:49:10.175Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-16T06:49:10.176Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/caboose-f06da  
+  
+ Fri Mar 16 2018 01:49:10 GMT-0500 (CDT)
+[debug] [2018-03-16T06:49:10.386Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/monircederstrom'...
+[info] 
+[debug] [2018-03-16T06:49:10.388Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/891538147778/clients/_:getWebAppConfig  
+  
+ Fri Mar 16 2018 01:49:10 GMT-0500 (CDT)
+[debug] [2018-03-16T06:49:10.863Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
