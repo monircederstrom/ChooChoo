@@ -1,27 +1,46 @@
 .rowheadings {
-    background-color: aqua;
-    color: white;
+    background-color: #E8C664;
+    color: purple;
     text-align: left;
     padding: .5%;
     padding-left: 1%;
+    
 }
 #table {
     padding-top: 2%;
     padding-left: 2%;
     padding-right: 2%;
-    border: 1px solid aqua;
+    border: 1px solid gold;
   
 }
 form {
     padding: 1%;
-    border: 1px solid aqua;
+    border: 1px solid gold;
 }
 .jumbotron {
-    background-color: blueviolet;
-    color: white;
+    background: url("soul.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: purple;
     text-align: center;
     width: 103%;
     margin-top: 1%;
     margin-left: -1.5%;
     margin-right: -5%;
+    font-family: 'Fugaz One', cursive;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0  white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+body {
+    background: url("space.jpeg");
+    color: white;
+    font-family: 'Nobile', sans-serif;
+}
+button {
+    background-color: #E8C664;
+    color: purple;
+    padding: 1%;
 }
